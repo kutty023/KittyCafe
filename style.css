@@ -1,0 +1,146 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #F2E5D9;
+    font-family: cursive;
+    display: grid;
+    height: 100%;
+    width: 100%;
+}
+
+.menu-bar{
+    background-color: #a18167;
+    color:#483222;
+    text-shadow: #6d5644;
+    text-align: right;
+}
+.menu-bar ul{
+    display: inline-flex;
+    list-style: none;
+}
+.menu-bar ul li{
+    margin: 15px;
+    padding: 15px;
+}
+
+.menu-bar ul li a{
+    text-decoration: none;
+    color:#503a29;
+}
+
+.menu-bar ul li:hover{
+    background-color: #9f795d;
+    border-radius: 3px;
+}
+
+.menu-bar .fa-sharp {
+    margin-right: 8px;
+}
+.menu-bar .fa-solid {
+    margin-right: 8px;
+}
+
+.sub-menu{
+    display: none;
+}
+.menu-bar ul li:hover .sub-menu{
+    display: block;
+    position: absolute;
+    background-color: #9f6d49c6;
+    margin-top: 10px;
+    margin-left: -10px;
+    border-radius:3px;
+}
+.menu-bar ul li:hover .sub-menu ul {
+    display: block;
+    margin: 10px;
+}
+.menu-bar ul li:hover .sub-menu ul li{
+    width: 120px;
+    padding: 10px;
+    border-radius: 3px;
+    text-align: left;
+}
+::selection{
+  color: #fff;
+  background: #1cc7d0;
+}
+.wrapper{
+  height: 400px;
+  width: 320px;
+  position: relative;
+  transform-style: preserve-3d;
+ perspective: 1000px;
+}
+.wrapper .card{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding: 5px;
+  background: #fff;
+  border-radius: 10px;
+  transform: translateY(0deg);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  box-shadow: 0px 10px 15px rgba(0,0,0,0.1);
+  transition: transform 0.7s cubic-bezier(0.4,0.2,0.2,1);
+}
+.wrapper:hover > .front-face{
+  transform: rotateY(-180deg);
+}
+.wrapper .card img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.wrapper .back-face{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  transform: rotateY(180deg);
+}
+.wrapper:hover > .back-face{
+  transform: rotateY(0deg);
+}
+.wrapper .back-face img{
+  height: 150px;
+  width: 150px;
+  padding: 5px;
+  border-radius: 50%;
+  background: linear-gradient(375deg, #1cc7d0, #2ede98);
+}
+.wrapper .back-face .info{
+  text-align: center;
+}
+.back-face .info .title{
+  font-size: 30px;
+  font-weight: 500;
+}
+.back-face ul{
+  display: flex;
+}
+.back-face ul a{
+  display: block;
+  height: 40px;
+  width: 40px;
+  color: #fff;
+  text-align: center;
+  margin: 0 5px;
+  line-height: 38px;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  background: linear-gradient(375deg, #1cc7d0, #2ede98);
+  transition: all 0.5s ease;
+}
+.back-face ul a:hover{
+  color: #1cc7d0;
+  border-color: #1cc7d0;
+  background: linear-gradient(375deg, transparent, transparent);
+}
+
+
